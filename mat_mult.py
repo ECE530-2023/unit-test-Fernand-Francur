@@ -1,6 +1,10 @@
 import pdb
 
 def mat_mult(mat1, mat2):
+    if ( mat1 == [] or mat2 == [] or mat1 == None or mat2 == None ):
+        print("ERROR: One or both matrices are empty")
+        return 254
+    
     if ( isinstance(mat1, list) == False or isinstance(mat2, list) == False ):
         print("ERROR: Matrices are not list type")
         return 253
@@ -8,12 +12,8 @@ def mat_mult(mat1, mat2):
     if ( isinstance(mat1[0], list) == False or isinstance(mat2[0], list) == False ):
         print("ERROR: Matrices do not have internal lists")
         return 252
-    
-    if ( mat1 == None or mat2 == None ):
-        print("ERROR: One or both matrices are empty")
-        return 254
-    
-    if ( len(mat1) != len(mat2[0]) ):
+        
+    if ( len(mat1[0]) != len(mat2) ):
         print("ERROR: Matrices are not appropriate size for multiplication")
         return 255
     
