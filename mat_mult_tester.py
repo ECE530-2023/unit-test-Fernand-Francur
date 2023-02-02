@@ -31,3 +31,18 @@ class TestMat:
     def test_multiplication(self):
         assert mat_mult([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4], [5, 6]]) == [
             [22, 28], [49, 64]]
+
+    def test_big_mult(self):
+        constant_size = 200
+        a = []
+        b = []
+        mat_true = []
+        c = []
+        for i in range(0, constant_size):
+            b.append(2)
+            c.append(constant_size * 4)
+        for j in range(0, constant_size):
+            a.append(b)
+            mat_true.append(c)
+
+        assert mat_mult(a, a) == mat_true
