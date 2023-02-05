@@ -25,3 +25,5 @@ for myfile in os.listdir(path):
         tracemalloc_wrapper.check_stats(CHECK)
         tracemalloc_wrapper.compare_wrap(DATA_DIS)
         tracemalloc_wrapper.clear_snapshots()
+
+        
