@@ -6,8 +6,8 @@ import tracemalloc_wrapper
 CHECK = 5
 DATA_DIS = 8
 
-path = "/media/sf_Shared_folder/EC530"
-for myfile in os.listdir(path):
+files = [f for f in os.listdir('.') if os.path.isfile(f)]
+for myfile in files:
     if myfile.endswith(".py") and myfile[0] == 'm':
         print("Linting " + myfile)
         subprocess.run(["autopep8", "--in-place", "-a", "-a", myfile])
@@ -16,7 +16,7 @@ for myfile in os.listdir(path):
 
 print("Running Unit Tests: ")
 tracemalloc.start()
-for myfile in os.listdir(path):
+for myfile in files:
     if myfile.endswith("tester.py") and myfile[0] == 'm':
         print("\n<<< Testing and tracemallocing " + myfile + " >>>")
         for i in range(5):            
