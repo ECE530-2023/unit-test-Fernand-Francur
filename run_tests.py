@@ -2,10 +2,13 @@ import os
 import subprocess
 import tracemalloc
 import tracemalloc_wrapper
+import cProfile
+import numpy as np
 
 CHECK = 5
 DATA_DIS = 8
 
+cProfile.run("20+10")
 files = [f for f in os.listdir('.') if os.path.isfile(f)]
 for myfile in files:
     if myfile.endswith(".py") and myfile[0] == 'm':
