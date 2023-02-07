@@ -3,7 +3,6 @@ import subprocess
 import tracemalloc
 import tracemalloc_wrapper
 import cProfile
-import numpy as np
 import pstats
 
 CHECK = 5
