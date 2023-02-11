@@ -12,3 +12,6 @@ using pytest
 
 In order to streamline everything, a separate run_tests.py file exists which runs mat_mult_tester.py with additional 
 methods to test memory allocation and CPU profiling. This is a script that is used by github actions
+
+tracemalloc_wrapper.py is used to make the functions in run_tests.py used for memory allocation testing a lot
+cleaner, hence being called just a wrapper
